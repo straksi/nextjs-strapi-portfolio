@@ -1,0 +1,113 @@
+.portfolio
+	&-section
+		min-height: 100vh
+		height: 100%
+		padding: 2rem 0
+	&-grid
+		display: grid
+		grid-template-columns: repeat(auto-fill, minmax(450px, 1fr))
+		grid-gap: 15px
+		+media-breakpoint-down(md)
+			grid-template-columns: repeat(auto-fill, minmax(290px, 1fr))
+		@media screen and (max-width:360px)
+			grid-gap: 5px
+	&-item
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		overflow: hidden
+		color: #fff
+		padding-bottom: 56.25%
+		background: #000
+		position: relative
+		transform-style: preserve-3d
+		border-radius: 5px
+		&:hover
+			&:before
+				opacity: 0.35
+			.portfolio-item__text
+				span
+					opacity: 1
+					transform: translateY(0)
+				&.go-to
+					span
+						transition-delay: .15s
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background: #000
+			opacity: 0.25
+			transition: opacity .25s ease
+			z-index: 1
+			pointer-events: none
+			border-radius: inherit
+		&__link
+			position: absolute
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+		&__img
+			position: relative
+			width: 100%
+			top: 0
+			left: 0
+			height: 100%
+			object-fit: cover
+			object-position: top
+		&__text
+			position: absolute
+			width: 100%
+			// height: 50px
+			// background: #fff
+			top: 50%
+			left: 50%
+			transform-style: preserve-3d
+			transform: translate3d(-50%, -50%, 75px)
+			z-index: 4
+			overflow: hidden
+			text-align: center
+			pointer-events: none
+			white-space: nowrap
+			span
+				font-size: 2em
+				color: #ffffff
+				transition: all .25s ease
+				display: block
+				opacity: 0
+				font-weight: 700
+				transform: translateY(100%)
+				text-transform: uppercase
+				text-shadow: 3px 2px 4px rgba(0,0,0,0.42)
+				+media-breakpoint-down(lg)
+					font-size: 1.5em
+				+media-breakpoint-down(md)
+					font-size: 1.1em
+			&.go-to
+				top: auto
+				bottom: 13%
+				transform: translate3d(-50%, 0, 45px)
+				span
+					font-size: 16px
+					text-transform: none
+					font-weight: 600
+					position: relative
+					display: inline-block
+					padding-bottom: 4px
+					+media-breakpoint-down(md)
+						font-size: 14px
+					&:before
+						bottom: 4px
+						content: ''
+						height: 2px
+						width: 50px
+						background: #fff
+						position: absolute
+						left: 0
+						z-index: 2
+		&.is-img-loaded

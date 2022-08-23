@@ -1,0 +1,119 @@
+.chat
+	width: calc(100% - 320px)
+	max-height: 100vh
+	display: flex
+	flex-direction: column
+	&>*
+		padding: 15px
+	&-section
+		display: flex
+	// background: rgba( 255, 255, 255, 0.1 )
+	// box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )
+	// backdrop-filter: blur( 12px )
+	// border-radius: 10px
+	// border: 1px solid rgba( 255, 255, 255, 0.18 )
+	&__head
+		position: relative
+		.user
+			&__email
+				opacity: 1
+				font-size: 16px
+		&::after
+			position: absolute
+			content: ''
+			width: calc(100% - 30px)
+			left: 15px
+			bottom: 0
+			height: 1px
+			background: #ffffff54
+			opacity: .7
+	&__body
+		flex: 1 1 0%
+		overflow-y: overlay
+		overflow-x: hidden
+		display: flex
+		flex-direction: column
+		.message
+			align-self: flex-end
+			max-width: 100%
+			display: flex
+			align-items: center
+			&__icon
+				width: 45px
+				min-width: 45px
+				height: 45px
+				border-radius: 50%
+				position: relative
+				overflow: hidden
+				margin-left: 10px
+				align-self: flex-start
+				order: 2
+			&__body
+				display: flex
+				flex-direction: column
+				max-width: calc(100% - 55px)
+			&__date
+				font-size: 12px
+				opacity: 0.7
+				font-weight: 300
+				margin-bottom: 2px
+				text-align: right
+			&__bubble
+				padding: 10px
+				border-radius: 5px
+				// background: #99aab5
+				// background: #666699
+				background: #ca3e47			
+				font-size: 16px
+				max-width: 100%
+				overflow: hidden
+				text-overflow: ellipsis
+				display: block
+				white-space: nowrap
+				align-self: flex-end
+				&>a
+					color: #fff
+					text-decoration: underline
+					width: 100%
+					max-width: 995px
+					overflow: hidden
+					text-overflow: ellipsis
+					display: block
+					white-space: nowrap
+				&>img
+					// max-width: 640px
+					display: block
+					border-radius: 5px
+					max-width: 995px
+					&:not(:first-child)
+						margin-top: 5px
+			&.is-sender
+				align-self: flex-start
+				.message
+					&__icon
+						order: -1
+						margin-right: 10px
+						margin-left: 0
+					&__bubble	
+						background: #7289da
+						align-self: flex-start
+					&__date
+						text-align: left
+			&+.message
+				margin-top: 20px
+		&::-webkit-scrollbar
+			width: 5px
+			height: 5px
+	&__bottom
+		display: flex
+		position: relative
+		position: relative
+		border-radius: 5px
+		background: rgba(#fff, .2)
+		padding: 5px 15px
+		margin: 10px 15px
+		.form__group
+			width: 100%
+			margin-right: 15px
+		.form__input
+			width: 100%
