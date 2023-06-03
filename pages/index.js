@@ -3,7 +3,7 @@ import Image from 'next/image'
 import axios from "axios";
 import ViewSource from '../components/view-source'
 const Home = ({ portfolio, error }) => {
-	// console.log(process.env.NEXT_PUBLIC_STRAPI_API_URL + '/api/test-collections?populate=*')
+	console.log(process.env.NEXT_PUBLIC_STRAPI_API_URL + '/api/test-collections?populate=*')
 	return (
 		<>
 			<Head>
