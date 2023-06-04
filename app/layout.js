@@ -6,6 +6,7 @@ export const metadata = {
 	  default: 'Портфолио',
 	//   template: '%s | Acme',
 	},
+	description: 'Портфолио'
   }
 const inter = Raleway({ 
 	weight: ['400', '300','600', '700'],
