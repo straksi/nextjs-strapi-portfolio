@@ -24,7 +24,7 @@ export default async function Home() {
 								<div className="portfolio-item" key={item.id}>
 									{/* <ViewSource pathname="pages/placeholder.js" /> */}
 									<Image fill className="portfolio-item__img"  sizes="100%" alt={item.attributes.title} src={item.attributes.image.data.attributes.url} priority={true}/>
-									<a href={item.attributes.link} rel="noreferrer" target="_blank" className="portfolio-item__link"></a>
+									<a href={item.attributes.link} aria-label={`Перейти на сайт ${item.attributes.title}`} rel="noreferrer" target="_blank" className="portfolio-item__link"></a>
 									<div className="portfolio-item__text">
 										<span>{item.attributes.title}</span>
 									</div>

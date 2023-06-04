@@ -6,7 +6,11 @@ export const metadata = {
 	  default: 'Портфолио',
 	//   template: '%s | Acme',
 	},
-	description: 'Портфолио'
+	description: 'Портфолио',
+	i18n: {
+		locales: ['ru'],
+		defaultLocale: 'ru',
+	  },
   }
 const inter = Raleway({ 
 	weight: ['400', '300','600', '700'],
@@ -15,15 +19,12 @@ const inter = Raleway({
  })
 export default function RootLayout({ children }) {
 	return (
-		<html>
-			<head />
-			
+		<html lang='ru'>
 			<body className={inter.className}>
 				{/* <Nav/> */}
 				<main className="main">
 					{children}
 				</main>
-
 			</body>
 		</html>
 	)
